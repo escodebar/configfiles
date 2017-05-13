@@ -1,0 +1,114 @@
+set nocompatible
+filetype off
+
+" set the runtime path
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle
+Plugin 'VundleVim/Vundle.vim'
+
+" Plugins
+Plugin 'ctrlpvim/ctrlp.vim'              " fasd-like file editing
+Plugin 'davidhalter/jedi-vim'           " python autocompletion
+Plugin 'editorconfig/editorconfig-vim'   " configure editor
+Plugin 'honza/vim-snippets'              " snippets
+Plugin 'majutsushi/tagbar'               " a class outline viewer
+Plugin 'scrooloose/nerdtree'             " file browser for vim
+Plugin 'scrooloose/nerdcommenter'        " comment plugin
+Plugin 'shime/vim-livedown'              " live markdown preview
+Plugin 'simnalamburt/vim-mundo'          " undo history viewer
+Plugin 'SirVer/ultisnips'                " snippets
+Plugin 'tpope/vim-fugitive'              " git integration
+Plugin 'tpope/vim-rhubarb'               "
+Plugin 'tpope/vim-sensible'              "
+Plugin 'vim-airline/vim-airline'         " nice statusbar
+Plugin 'vim-airline/vim-airline-themes'  " statusbar-themes
+Plugin 'vim-syntastic/syntastic'         " syntax checker
+Plugin 'wakatime/vim-wakatime'           " time tracker
+
+" Colorschemes
+Plugin 'altercation/vim-colors-solarized'  " solanized!
+
+call vundle#end()
+filetype plugin indent on
+
+" General vim settings
+
+colorscheme solarized
+imap jj <Esc>
+set backspace=eol,start,indent
+set background=light
+set encoding=utf8
+set ffs=unix,dos,mac
+set hlsearch
+set incsearch
+set lazyredraw
+set laststatus=2
+set magic
+set mat=2
+set mouse=a
+set nobackup
+set noerrorbells
+set noswapfile
+set novisualbell
+set nowritebackup
+set number
+set ruler
+set showmatch
+set noshowmode
+set smartindent
+set splitbelow
+set splitright
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatusLineFlag()}
+set statusline+=%*
+set ttimeoutlen=50
+set whichwrap+=<,>,h,l
+set wildignore+=*/bin/*
+set wildignore+=*/include/*
+set wildignore+=*/lib/*,*/lib64/*
+set wildignore+=*/media/*
+set wildignore+=*/man/*
+set wildignore+=*/share/*
+set wildignore+=*.pyo,*.pyc,*/__pycache__/*
+set wildignore+=*.sqlite3
+set wildmenu
+set wildmode=longest:full
+set wrap
+syntax enable
+vnoremap <silent> * :call VisualSelection('f')<CR>
+vnoremap <silent> # :call VisualSelection('b')<CR>
+
+" Plugins
+
+let g:airline_powerline_fonts=1
+let g:airline_theme='base16'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
+let g:ctrlp_follow_symlinks = 1
+
+let g:jedi#completions_enabled=1
+let g:jedi#popup_on_dot=0
+let g:jedi#show_call_signatures=2
+
+let g:solarized_bold=0
+let g:solarized_italic=0
+
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_c_checkers = ['splint', 'clang_check', 'make', 'gcc']
+let g:syntastic_html_checkers = ['tidy']
+let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args ='--doctests --ignore=E123,E203,E221,E222,E241,E251,E272'
+
+let g:vim_tags_auto_generate = 1
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsSnippetDirectories=['~/.vim/UltiSnips', 'UltiSnips', '~/.vim/bundle/vim-snippets/UltiSnips']
