@@ -1,0 +1,159 @@
+servers = (
+  {
+    address = "chat.freenode.net";
+    chatnet = "Freenode";
+    port = "6697";
+    use_tls = "yes";
+    tls_verify = "yes";
+  }
+);
+
+chatnets = {
+  Freenode = {
+    type = "IRC";
+    nick = "q--pr";
+    max_kicks = "1";
+    max_msgs = "4";
+    max_whois = "1";
+  };
+};
+
+channels = (
+  {
+    name = "#python";
+    chatnet = "Freenode";
+    autojoin = "No";
+  }
+);
+
+aliases = {
+  BACK = "AWAY";
+  DATE = "TIME";
+  EXIT = "QUIT";
+  GOTO = "SCROLLBACK GOTO";
+  J = "JOIN";
+  LEAVE = "PART";
+  P = "PART";
+  Q = "QUERY";
+  SAY = "MSG *";
+  SB = "SCROLLBACK";
+  T = "TOPIC";
+  WC = "WINDOW CLOSE";
+  WG = "WINDOW GOTO";
+  WL = "WINDOW LIST";
+  1 = "WINDOW GOTO 1";
+  2 = "WINDOW GOTO 2";
+  3 = "WINDOW GOTO 3";
+  4 = "WINDOW GOTO 4";
+  5 = "WINDOW GOTO 5";
+  6 = "WINDOW GOTO 6";
+  7 = "WINDOW GOTO 7";
+  8 = "WINDOW GOTO 8";
+  9 = "WINDOW GOTO 9";
+  10 = "WINDOW GOTO 10";
+};
+
+statusbar = {
+
+  items = {
+
+    barstart = "{sbstart}";
+    barend = "{sbend}";
+
+    topicbarstart = "{topicsbstart}";
+    topicbarend = "{topicsbend}";
+
+    time = "{sb $Z}";
+    user = "{sb {sbnickmode $cumode}$N{sbmode $usermode}{sbaway $A}}";
+
+    window = "{sb $winref:$tag/$itemname{sbmode $M}}";
+    window_empty = "{sb $winref{sbservertag $tag}}";
+
+    prompt = "{prompt $[.15]itemname}";
+    prompt_empty = "{prompt $winname}";
+
+    topic = " $topic";
+    topic_empty = " Irssi v$J - http://www.irssi.org";
+
+    lag = "{sb Lag: $0-}";
+    act = "{sb Act: $0-}";
+    more = "-- more --";
+  };
+
+  default = {
+
+    window = {
+
+      disabled = "no";
+      type = "window";
+      placement = "bottom";
+      position = "1";
+      visible = "active";
+
+      items = {
+        barstart = { priority = "100"; };
+        time = { };
+        user = { };
+        window = { };
+        window_empty = { };
+        lag = { priority = "-1"; };
+        act = { priority = "10"; };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+
+    window_inact = {
+
+      type = "window";
+      placement = "bottom";
+      position = "1";
+      visible = "inactive";
+
+      items = {
+        barstart = { priority = "100"; };
+        window = { };
+        window_empty = { };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+
+    prompt = {
+
+      type = "root";
+      placement = "bottom";
+      position = "100";
+      visible = "always";
+
+      items = {
+        prompt = { priority = "-1"; };
+        prompt_empty = { priority = "-1"; };
+        input = { priority = "10"; };
+      };
+    };
+
+    topic = {
+
+      type = "root";
+      placement = "top";
+      position = "1";
+      visible = "always";
+
+      items = {
+        topicbarstart = { priority = "100"; };
+        topic = { };
+        topic_empty = { };
+        topicbarend = { priority = "100"; alignment = "right"; };
+      };
+    };
+  };
+};
+settings = {
+  core = {
+    real_name = "QooPr";
+    user_name = "q--pr";
+    nick = "q--pr";
+  };
+  "fe-text" = { actlist_sort = "refnum"; };
+};
