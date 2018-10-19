@@ -37,3 +37,8 @@ Setup [Vundle](https://github.com/VundleVim/Vundle.vim) and install the plugins:
 $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim && \
   vim +PluginInstall +qall
 ```
+
+To use [Markdown document preview](https://github.com/shime/vim-livedown) install [Livedown](https://github.com/shime/livedown):
+```shell
+$ npm install -g livedown
+```
