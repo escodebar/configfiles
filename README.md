@@ -23,3 +23,17 @@ Create a symbolic link to tell your editor to use this configuration:
 ```shell
 $ ln -s ~/.config/editorconfig/config ~/.editorconfig
 ```
+
+### Vim
+
+Vim reads the `.vimrc` file in your home directory.
+Create a symbolic link to tell vim to use this configuration:
+```shell
+$ ln -s ~/.config/vim/vimrc ~/.vimrc
+```
+
+Setup [Vundle](https://github.com/VundleVim/Vundle.vim) and install the plugins:
+``` shell
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim && \
+  vim +PluginInstall +qall
+```
