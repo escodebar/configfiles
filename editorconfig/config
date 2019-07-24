@@ -4,6 +4,12 @@ root = true
 indent_style = space
 indent_size = 4
 
+[Makefile]
+indent_style = tab
+
+[*.go]
+indent_style = tab
+
 [*.{html,ini,js,json,yml,vue}]
 charset = utf-8
 end_of_line = lf
