@@ -3,7 +3,7 @@ font pango:monospace 16
 floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
-bindsym $mod+l exec i3lock -c 002b36 -n -e
+bindsym $mod+l exec i3lock -c 103c48 -n -e
 bindsym $mod+d exec dmenu_run -fn 'Inconsolata-16'
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
