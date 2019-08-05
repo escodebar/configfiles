@@ -1,6 +1,6 @@
 # Configuration
 
-Configures my Dell Latitude (Dectris Laptop).
+Configures my Dectris Workstation.
 
 ## Installation
 
@@ -46,4 +46,9 @@ $ npm install -g livedown
 To check the syntax of your Python code install [Flake 8](http://flake8.pycqa.org/en/latest/):
 ```shell
 $ python -m pip install flake8
+```
+
+To move to the right split, `Ctrl-s` is used, it is therefore required to set
+```shell
+$ echo "tty -ixon" >> ~/.zshrc
 ```
