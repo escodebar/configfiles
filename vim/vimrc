@@ -61,6 +61,7 @@ syntax enable
 let mapleader=","
 nnoremap <leader>ve :vsplit ~/.vimrc<CR>
 nnoremap <leader>vs :source ~/.vimrc<CR>
+nnoremap <leader>ne :NERDTreeToggle<CR>
 nnoremap <F2> :bp<CR>
 nnoremap <F3> :ls<CR>
 nnoremap <F4> :bw<CR>
