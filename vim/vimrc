@@ -71,6 +71,7 @@ nnoremap <C-h> <C-W><C-h>
 nnoremap <C-t> <C-W><C-j>
 nnoremap <C-n> <C-W><C-k>
 nnoremap <C-s> <C-W><C-l>
+nnoremap <C-@> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 vnoremap <silent> * :call VisualSelection('f')<CR>
 vnoremap <silent> # :call VisualSelection('b')<CR>
 let g:airline_powerline_fonts=1
