@@ -6,6 +6,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'prettier/vim-prettier'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'shime/vim-livedown'
@@ -90,3 +91,6 @@ let g:syntastic_html_checkers = ['tidy']
 let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args ='--doctests --ignore=E123,E203,E221,E222,E241,E251,E272'
+augroup prettier
+    autocmd BufWritePre *.spec.js,*.js,*.vue execute ':Prettier'
+augroup END
